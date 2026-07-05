@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 
 // Stagger configurations for checklist items
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -10,7 +11,7 @@ const containerVariants = {
   },
 }
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, x: -10 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
 }
@@ -102,7 +103,7 @@ export function Product() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center justify-center p-4 lg:p-8 order-2 h-72 md:h-96 relative bg-bg/20 rounded-2xl border border-border/40 overflow-hidden"
           >
             {/* Mock Chat Card */}
@@ -156,7 +157,7 @@ export function Product() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center justify-center p-4 lg:p-8 order-2 lg:order-1 h-72 md:h-96 relative bg-bg/20 rounded-2xl border border-border/40 overflow-hidden"
           >
             {/* Avatar chips layout */}
@@ -327,7 +328,7 @@ export function Product() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center justify-center p-4 lg:p-8 order-2 h-72 md:h-96 relative bg-bg/20 rounded-2xl border border-border/40 overflow-hidden"
           >
             {/* Savings Insight Card */}
