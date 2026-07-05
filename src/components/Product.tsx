@@ -170,7 +170,7 @@ export function Product() {
                 {/* User Row 1 */}
                 <div className="flex items-center justify-between bg-bg-elevated/60 border border-border/40 p-2.5 rounded-xl transition-all hover:bg-bg-elevated">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-brand-purple flex items-center justify-center font-mono text-xs text-text-primary font-bold shadow-md">
+                    <div className="w-8 h-8 rounded-full bg-brand-purple/20 border border-brand-purple/40 flex items-center justify-center font-mono text-xs text-brand-purple font-bold shadow-md">
                       SC
                     </div>
                     <div className="text-left">
@@ -186,7 +186,7 @@ export function Product() {
                 {/* User Row 2 */}
                 <div className="flex items-center justify-between bg-bg-elevated/60 border border-border/40 p-2.5 rounded-xl transition-all hover:bg-bg-elevated">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-brand-pink flex items-center justify-center font-mono text-xs text-text-primary font-bold shadow-md">
+                    <div className="w-8 h-8 rounded-full bg-brand-pink/20 border border-brand-pink/40 flex items-center justify-center font-mono text-xs text-brand-pink font-bold shadow-md">
                       JD
                     </div>
                     <div className="text-left">
@@ -202,7 +202,7 @@ export function Product() {
                 {/* User Row 3 */}
                 <div className="flex items-center justify-between bg-bg-elevated/60 border border-border/40 p-2.5 rounded-xl transition-all hover:bg-bg-elevated">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-brand-blue flex items-center justify-center font-mono text-xs text-text-primary font-bold shadow-md">
+                    <div className="w-8 h-8 rounded-full bg-brand-blue/20 border border-brand-blue/40 flex items-center justify-center font-mono text-xs text-brand-blue font-bold shadow-md">
                       BW
                     </div>
                     <div className="text-left">
