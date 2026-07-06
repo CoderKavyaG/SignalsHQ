@@ -1,6 +1,10 @@
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { Product } from './components/Product'
+import { UseCases } from './components/UseCases'
+import { Stats } from './components/Stats'
+import { CustomerStories } from './components/CustomerStories'
+import { Security } from './components/Security'
 
 export default function App() {
   return (
@@ -14,14 +18,22 @@ export default function App() {
       {/* Product Section */}
       <Product />
 
-      {/* Spacer sections below the fold to allow scrolling */}
-      <main className="px-6 flex flex-col items-center">
-        <div className="w-full max-w-4xl space-y-8 pb-32">
-          <div className="h-64 rounded-xl border border-border bg-bg-elevated/40 flex items-center justify-center">
-            <span className="text-text-faint font-mono text-sm">Pricing Section Placeholder</span>
-          </div>
-        </div>
-      </main>
+      {/* Use Cases Section */}
+      <UseCases />
+
+      {/* Stats Counters Row */}
+      <Stats />
+
+      {/* Customer Stories Testimonials */}
+      <CustomerStories />
+
+      {/* Security Section */}
+      <Security />
+
+      {/* Simple Footer */}
+      <footer className="py-12 border-t border-border/40 text-center select-none bg-bg text-text-faint font-mono text-[10px] uppercase tracking-widest">
+        &copy; {new Date().getFullYear()} SignalsHQ. All rights reserved.
+      </footer>
     </div>
   )
 }
