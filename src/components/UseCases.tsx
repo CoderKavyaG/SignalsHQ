@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Section } from './Section'
 
 interface CardItem {
   icon: React.ReactNode
@@ -76,7 +77,7 @@ export function UseCases() {
   ]
 
   return (
-    <section className="relative py-24 px-6 bg-bg border-t border-border/40 select-none overflow-hidden">
+    <Section id="usecase" className="border-t border-border/40 overflow-hidden bg-bg">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">
@@ -98,7 +99,7 @@ export function UseCases() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.1 }}
-              className="bg-bg-elevated/40 border border-border/80 rounded-2xl p-8 flex flex-col items-start text-left transition-all duration-300 hover:border-text-faint/60 hover:-translate-y-1"
+              className="bg-bg-elevated/40 border border-border/80 rounded-2xl p-8 flex flex-col items-start text-left transition-all duration-200 ease-in-out hover:border-text-faint/60 hover:-translate-y-1 shadow-md hover:shadow-lg"
             >
               {/* Icon in rounded square */}
               <div className="w-12 h-12 rounded-xl bg-bg-elevated border border-border flex items-center justify-center mb-6 shadow-inner">
@@ -115,6 +116,6 @@ export function UseCases() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

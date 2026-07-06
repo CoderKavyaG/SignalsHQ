@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
+import { Section } from './Section'
 
 // Stagger configurations for checklist items
 const containerVariants: Variants = {
@@ -18,7 +19,7 @@ const itemVariants: Variants = {
 
 export function Product() {
   return (
-    <section className="relative py-24 px-6 bg-bg border-t border-border/40 select-none overflow-hidden">
+    <Section id="product" className="border-t border-border/40 select-none overflow-hidden bg-bg">
       {/* Background radial gradient glow for section separation */}
       <div 
         className="absolute top-1/4 right-0 w-[40vw] h-[40vw] rounded-full blur-[160px] opacity-[0.04] pointer-events-none"
@@ -56,7 +57,7 @@ export function Product() {
             <span className="font-mono text-xs font-semibold text-brand-purple tracking-widest uppercase mb-4">
               TAX ASSIST
             </span>
-            <h3 className="font-display font-bold text-2xl md:text-3xl text-text-primary mb-6 leading-tight">
+            <h3 className="font-display font-bold text-xl md:text-2xl text-text-primary mb-6 leading-tight">
               Instant, reliable answers to your tax questions.
             </h3>
             
@@ -169,7 +170,7 @@ export function Product() {
               
               <div className="space-y-3">
                 {/* User Row 1 */}
-                <div className="flex items-center justify-between bg-bg-elevated/60 border border-border/40 p-2.5 rounded-xl transition-all hover:bg-bg-elevated">
+                <div className="flex items-center justify-between bg-bg-elevated/60 border border-border/40 p-2.5 rounded-xl transition-all hover:bg-bg-elevated/80 duration-150 ease-in-out">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-brand-purple/20 border border-brand-purple/40 flex items-center justify-center font-mono text-xs text-brand-purple font-bold shadow-md">
                       SC
@@ -185,7 +186,7 @@ export function Product() {
                 </div>
 
                 {/* User Row 2 */}
-                <div className="flex items-center justify-between bg-bg-elevated/60 border border-border/40 p-2.5 rounded-xl transition-all hover:bg-bg-elevated">
+                <div className="flex items-center justify-between bg-bg-elevated/60 border border-border/40 p-2.5 rounded-xl transition-all hover:bg-bg-elevated/80 duration-150 ease-in-out">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-brand-pink/20 border border-brand-pink/40 flex items-center justify-center font-mono text-xs text-brand-pink font-bold shadow-md">
                       JD
@@ -201,7 +202,7 @@ export function Product() {
                 </div>
 
                 {/* User Row 3 */}
-                <div className="flex items-center justify-between bg-bg-elevated/60 border border-border/40 p-2.5 rounded-xl transition-all hover:bg-bg-elevated">
+                <div className="flex items-center justify-between bg-bg-elevated/60 border border-border/40 p-2.5 rounded-xl transition-all hover:bg-bg-elevated/80 duration-150 ease-in-out">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-brand-blue/20 border border-brand-blue/40 flex items-center justify-center font-mono text-xs text-brand-blue font-bold shadow-md">
                       BW
@@ -224,7 +225,7 @@ export function Product() {
             <span className="font-mono text-xs font-semibold text-brand-pink tracking-widest uppercase mb-4">
               CLIENT ORGANIZER
             </span>
-            <h3 className="font-display font-bold text-2xl md:text-3xl text-text-primary mb-6 leading-tight">
+            <h3 className="font-display font-bold text-xl md:text-2xl text-text-primary mb-6 leading-tight">
               Client Data in One Place. Structured. Searchable.
             </h3>
             
@@ -274,7 +275,7 @@ export function Product() {
             <span className="font-mono text-xs font-semibold text-brand-blue tracking-widest uppercase mb-4">
               CLIENT REVIEW
             </span>
-            <h3 className="font-display font-bold text-2xl md:text-3xl text-text-primary mb-6 leading-tight">
+            <h3 className="font-display font-bold text-xl md:text-2xl text-text-primary mb-6 leading-tight">
               Get workpaper insight. Zero Manual Grind.
             </h3>
             
@@ -375,6 +376,6 @@ export function Product() {
         </div>
 
       </div>
-    </section>
+    </Section>
   )
 }

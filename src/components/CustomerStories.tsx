@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Section } from './Section'
 
 interface Testimonial {
   quote: string
@@ -30,7 +31,7 @@ export function CustomerStories() {
   ]
 
   return (
-    <section className="relative py-24 px-6 bg-bg border-t border-border/40 select-none overflow-hidden">
+    <Section id="testimonials" className="border-t border-border/40 overflow-hidden bg-bg">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 flex flex-col items-center">
@@ -52,10 +53,10 @@ export function CustomerStories() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.15 }}
-              className="bg-bg-elevated/40 border border-border/80 rounded-2xl p-8 md:p-10 flex flex-col justify-between text-left relative overflow-hidden group hover:border-text-faint/60 transition-all duration-300"
+              className="bg-bg-elevated/40 border border-border/80 rounded-2xl p-8 md:p-10 flex flex-col justify-between text-left relative overflow-hidden group hover:border-text-faint/60 transition-all duration-200 ease-in-out shadow-md hover:shadow-lg"
             >
               {/* Quote Icon Background decoration */}
-              <span className="absolute top-4 right-6 font-display font-black text-7xl md:text-8xl text-text-faint/15 select-none pointer-events-none transition-colors group-hover:text-text-faint/25">
+              <span className="absolute top-4 right-6 font-display font-black text-7xl md:text-8xl text-text-faint/15 select-none pointer-events-none transition-colors duration-200 group-hover:text-text-faint/25">
                 “
               </span>
 
@@ -86,6 +87,6 @@ export function CustomerStories() {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

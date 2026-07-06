@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Section } from './Section'
 
 interface SecurityCard {
   icon: React.ReactNode
@@ -93,7 +94,7 @@ export function Security() {
   ]
 
   return (
-    <section className="relative py-24 px-6 bg-bg border-t border-border/40 select-none overflow-hidden">
+    <Section id="security" className="border-t border-border/40 overflow-hidden bg-bg">
       {/* Localized dot-grid background texture specifically within this section */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -134,7 +135,7 @@ export function Security() {
 
           <a 
             href="#security-docs"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border bg-bg hover:bg-bg-elevated text-text-primary font-mono text-xs font-semibold tracking-wider transition-all duration-200 cursor-pointer"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border bg-bg hover:bg-bg-elevated text-text-primary font-mono text-xs font-semibold tracking-wider transition-all duration-200 ease-in-out cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50"
           >
             FIND MORE
           </a>
@@ -149,7 +150,7 @@ export function Security() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.08 }}
-              className="bg-bg-elevated/40 border border-border/80 rounded-2xl p-6 md:p-8 flex flex-col justify-between items-start text-left transition-all duration-300 hover:border-text-faint/60"
+              className="bg-bg-elevated/40 border border-border/80 rounded-2xl p-6 md:p-8 flex flex-col justify-between items-start text-left transition-all duration-200 ease-in-out hover:border-text-faint/60 shadow-md hover:shadow-lg"
             >
               {/* Header inside card */}
               <div className="flex items-center justify-between w-full mb-6">
@@ -172,6 +173,6 @@ export function Security() {
         </div>
 
       </div>
-    </section>
+    </Section>
   )
 }
