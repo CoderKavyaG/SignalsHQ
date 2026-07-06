@@ -5,6 +5,7 @@ import { UseCases } from './components/UseCases'
 import { Stats } from './components/Stats'
 import { CustomerStories } from './components/CustomerStories'
 import { Security } from './components/Security'
+import { Footer } from './components/Footer'
 
 export default function App() {
   return (
@@ -30,10 +31,8 @@ export default function App() {
       {/* Security Section */}
       <Security />
 
-      {/* Simple Footer */}
-      <footer className="py-12 border-t border-border/40 text-center select-none bg-bg text-text-faint font-mono text-[10px] uppercase tracking-widest">
-        &copy; {new Date().getFullYear()} SignalsHQ. All rights reserved.
-      </footer>
+      {/* Complete Responsive Footer */}
+      <Footer />
     </div>
   )
 }
