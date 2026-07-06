@@ -118,4 +118,3 @@ export function UseCases() {
     </section>
   )
 }
-export { UseCases }

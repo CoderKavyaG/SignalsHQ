@@ -15,7 +15,6 @@ function StatCounter({ value, suffix, label }: StatItemProps) {
   useEffect(() => {
     if (!isInView) return
 
-    let start = 0
     const end = value
     const duration = 1200 // 1.2s
     let startTime: number | null = null
@@ -85,4 +84,3 @@ export function Stats() {
     </section>
   )
 }
-export { Stats }

@@ -89,4 +89,3 @@ export function CustomerStories() {
     </section>
   )
 }
-export { CustomerStories }
