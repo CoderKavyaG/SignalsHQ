@@ -117,7 +117,7 @@ export function Hero() {
             href="#demo"
             whileHover={{ scale: 1.02, filter: 'brightness(1.1)' }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-accent-cta text-accent-cta-text font-body text-base font-semibold tracking-wide shadow-lg cursor-pointer"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-accent-cta text-accent-cta-text font-body text-base font-semibold tracking-wide shadow-lg cursor-pointer transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50"
           >
             Book a Demo →
           </motion.a>
