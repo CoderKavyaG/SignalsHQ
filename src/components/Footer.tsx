@@ -90,33 +90,13 @@ export function Footer() {
           <div className="md:col-span-4 flex flex-col items-start text-left gap-4">
             <a 
               href="/" 
-              className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded-lg p-1"
+              className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded-lg p-1"
             >
-              <div className="relative w-8 h-8 flex items-center justify-center">
-                <svg 
-                  width="28" 
-                  height="28" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-7 h-7 transform transition-transform group-hover:rotate-45 duration-500"
-                >
-                  <defs>
-                    <linearGradient id="footer-brand-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#8B5CF6" />
-                      <stop offset="50%" stopColor="#EC4899" />
-                      <stop offset="100%" stopColor="#6366F1" />
-                    </linearGradient>
-                  </defs>
-                  <path 
-                    d="M12 2C12 7.5 16.5 12 22 12C16.5 12 12 16.5 12 22C12 16.5 7.5 12 2 12C7.5 12 12 7.5 12 2Z" 
-                    fill="url(#footer-brand-grad)" 
-                  />
-                </svg>
-              </div>
-              <span className="font-display font-bold text-xl tracking-tight text-text-primary">
-                SignalsHQ
-              </span>
+              <img 
+                src="/logo.png" 
+                alt="SignalsHQ Logo" 
+                className="h-[24px] w-auto object-contain transition-opacity duration-200 hover:opacity-90"
+              />
             </a>
             <p className="font-body text-xs md:text-sm font-medium text-text-muted leading-relaxed max-w-xs">
               AI-driven tax automation infrastructure. Scaling productivity, compliance, and growth for modern accounting firms.
@@ -150,9 +130,23 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-border/40 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="font-body text-xs text-text-faint">
-            &copy; {currentYear} SignalsHQ. All rights reserved.
-          </span>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <span className="font-body text-xs text-text-faint">
+              &copy; {currentYear} SignalsHQ. All rights reserved.
+            </span>
+            <span className="hidden sm:inline text-text-faint/30">•</span>
+            <span className="font-body text-xs text-text-faint">
+              Built by{' '}
+              <a 
+                href="https://coderkavyag.me" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="font-semibold text-text-muted hover:text-text-primary transition-colors duration-200 underline decoration-brand-purple/60 hover:decoration-brand-purple decoration-1 underline-offset-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded px-1"
+              >
+                Kavya
+              </a>
+            </span>
+          </div>
 
           {/* Social Icons */}
           <div className="flex items-center gap-4">
