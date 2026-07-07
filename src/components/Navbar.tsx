@@ -15,49 +15,27 @@ export function Navbar() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 border-b border-transparent"
-      initial={{ backgroundColor: 'rgba(8, 8, 11, 0)' }}
+      className="fixed left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl z-50 rounded-full border bg-bg/85 backdrop-blur-md shadow-2xl transition-all duration-300 ease-in-out"
+      initial={{ top: '16px', y: 0 }}
       animate={{
-        backgroundColor: isScrolled || isMobileMenuOpen ? 'rgba(8, 8, 11, 0.90)' : 'rgba(8, 8, 11, 0)',
-        backdropFilter: isScrolled || isMobileMenuOpen ? 'blur(12px)' : 'blur(0px)',
-        borderBottomColor: isScrolled || isMobileMenuOpen ? 'var(--color-border, #232329)' : 'rgba(35, 35, 41, 0)',
+        top: isScrolled ? '12px' : '16px',
+        backgroundColor: isScrolled || isMobileMenuOpen ? 'rgba(18, 18, 24, 0.92)' : 'rgba(8, 8, 11, 0.85)',
+        borderColor: isScrolled || isMobileMenuOpen ? 'var(--color-border, #232329)' : 'rgba(35, 35, 41, 0.5)',
+        boxShadow: isScrolled ? '0 10px 30px -10px rgba(0, 0, 0, 0.7)' : '0 4px 20px -5px rgba(0, 0, 0, 0.3)',
       }}
-      transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="px-6 h-16 flex items-center justify-between relative">
         {/* Left Side: Logo */}
         <a 
           href="/" 
           aria-label="SignalsHQ Home"
-          className="flex items-center gap-3 group select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded-lg p-1"
+          className="flex items-center select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded-lg p-1 shrink-0"
         >
-          {/* Spark SVG with Brand Gradient */}
-          <div className="relative w-8 h-8 flex items-center justify-center">
-            <svg 
-              width="28" 
-              height="28" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-7 h-7 transform transition-transform group-hover:rotate-45 duration-500"
-            >
-              <defs>
-                <linearGradient id="logo-brand-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#8B5CF6" />
-                  <stop offset="50%" stopColor="#EC4899" />
-                  <stop offset="100%" stopColor="#6366F1" />
-                </linearGradient>
-              </defs>
-              <path 
-                d="M12 2C12 7.5 16.5 12 22 12C16.5 12 12 16.5 12 22C12 16.5 7.5 12 2 12C7.5 12 12 7.5 12 2Z" 
-                fill="url(#logo-brand-grad)" 
-              />
-            </svg>
-          </div>
-          {/* Wordmark */}
-          <span className="font-display font-bold text-xl tracking-tight text-text-primary">
-            SignalsHQ
-          </span>
+          <img 
+            src="/logo.png" 
+            alt="SignalsHQ Logo" 
+            className="h-[22px] md:h-[26px] w-auto object-contain transition-opacity duration-200 hover:opacity-90"
+          />
         </a>
 
         {/* Center: Navigation Links (Desktop only) */}
@@ -118,35 +96,35 @@ export function Navbar() {
         </nav>
 
         {/* Right Side: CTA Button (Desktop only) */}
-        <div className="hidden md:block">
+        <div className="hidden md:block shrink-0">
           <motion.a
             href="#demo"
             whileHover={{ scale: 1.02, filter: 'brightness(1.1)' }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-accent-cta text-accent-cta-text font-body text-sm font-semibold tracking-wide transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50"
+            className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-accent-cta text-accent-cta-text font-body text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50"
           >
             Book a Demo →
           </motion.a>
         </div>
 
         {/* Mobile Hamburger Toggle Button */}
-        <div className="flex md:hidden items-center">
+        <div className="flex md:hidden items-center shrink-0">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle Navigation Menu"
-            className="w-10 h-10 rounded-lg flex items-center justify-center border border-border bg-bg-elevated/50 text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 transition-all duration-200 ease-in-out cursor-pointer"
+            className="w-9 h-9 rounded-full flex items-center justify-center border border-border bg-bg-elevated/50 text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 transition-all duration-200 ease-in-out cursor-pointer"
           >
             <svg
-              width="20"
-              height="20"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className={`w-5 h-5 transition-transform duration-200 ${isMobileMenuOpen ? 'rotate-90' : ''}`}
+              className={`w-4.5 h-4.5 transition-transform duration-200 ${isMobileMenuOpen ? 'rotate-90' : ''}`}
             >
               {isMobileMenuOpen ? (
                 <path d="M18 6L6 18M6 6l12 12" />
@@ -156,68 +134,68 @@ export function Navbar() {
             </svg>
           </button>
         </div>
-      </div>
 
-      {/* Mobile Slide-Down Dropdown Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="md:hidden border-t border-border bg-bg/95 backdrop-blur-lg overflow-hidden absolute top-20 left-0 right-0 z-40"
-          >
-            <div className="flex flex-col gap-5 px-6 py-8 text-left">
-              <a
-                href="#features"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="font-body text-base font-semibold text-text-muted hover:text-text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded p-1"
-              >
-                Features
-              </a>
-              <a
-                href="#pricing"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="font-body text-base font-semibold text-text-muted hover:text-text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded p-1"
-              >
-                Pricing
-              </a>
-              <a
-                href="#usecase"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="font-body text-base font-semibold text-text-muted hover:text-text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded p-1"
-              >
-                Use Case
-              </a>
-              <a
-                href="#security"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="font-body text-base font-semibold text-text-muted hover:text-text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded p-1"
-              >
-                Security
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="font-body text-base font-semibold text-text-muted hover:text-text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded p-1"
-              >
-                Contact
-              </a>
-              
-              <div className="pt-4 border-t border-border/40">
+        {/* Mobile Slide-Down Dropdown Menu (Detached Card Container) */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -10 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="md:hidden border border-border bg-bg/95 backdrop-blur-lg overflow-hidden rounded-2xl shadow-2xl absolute top-[76px] left-0 right-0 z-40"
+            >
+              <div className="flex flex-col gap-4 px-6 py-6 text-left">
                 <a
-                  href="#demo"
+                  href="#features"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full inline-flex items-center justify-center px-6 py-3 rounded-full bg-accent-cta text-accent-cta-text font-body text-sm font-semibold tracking-wide transition-all duration-200 cursor-pointer text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50"
+                  className="font-body text-sm font-semibold text-text-muted hover:text-text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded p-1"
                 >
-                  Book a Demo →
+                  Features
                 </a>
+                <a
+                  href="#pricing"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="font-body text-sm font-semibold text-text-muted hover:text-text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded p-1"
+                >
+                  Pricing
+                </a>
+                <a
+                  href="#usecase"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="font-body text-sm font-semibold text-text-muted hover:text-text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded p-1"
+                >
+                  Use Case
+                </a>
+                <a
+                  href="#security"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="font-body text-sm font-semibold text-text-muted hover:text-text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded p-1"
+                >
+                  Security
+                </a>
+                <a
+                  href="#contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="font-body text-sm font-semibold text-text-muted hover:text-text-primary transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50 rounded p-1"
+                >
+                  Contact
+                </a>
+                
+                <div className="pt-3 border-t border-border/40">
+                  <a
+                    href="#demo"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="w-full inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-accent-cta text-accent-cta-text font-body text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple/50"
+                  >
+                    Book a Demo →
+                  </a>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.header>
   )
 }
